@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h1>Das wird in die Seite eingefügt</h1>
+
+<div id="map" style="width:40%;height:500px"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var myCenter = new google.maps.LatLng(43.86027718467949,18.45703125); 
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas,mapOptions);
+  var marker = new google.maps.Marker({
+    position: myCenter,
+    animation: google.maps.Animation.BOUNCE
+  });
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzGgt0iB_7ysUWidG9x5D2odTS1THBnRE&callback=myMap"></script>
+
+</body>
+</html>
